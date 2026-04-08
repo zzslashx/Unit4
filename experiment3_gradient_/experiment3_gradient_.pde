@@ -1,13 +1,10 @@
 void setup() {
-  size(1200, 1200);
+  size(1000, 1000);
 
   // background gradient
-  for (int i = 0; i < height; i++) {
-    float c = map(i, 0, height, 0, 255);
-    stroke(c, c/2, c/4);
-    line(0, i, width, i);
-  }
-
+  drawGradientRect(0,0,width,height,1,2,4);
+  //the three squares
+  scale(0.8);
   drawGradientRect(450, 450, 300, 300, 5.0, 10.0, 1.0);
   drawGradientRect(850, 450, 300, 300, 1.0, 1.5, 3.0);
   drawGradientRect(50, 450, 300, 300, 3.0, 1.0, 2.0);
