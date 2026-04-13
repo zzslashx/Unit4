@@ -1,20 +1,20 @@
 void setup() {
   size(1000, 1000);
+//backgound
+drawGradientRect(0, 0, width, height, color(10, 20, 40), color(100, 150, 255));
 
-  // background gradient
-  drawGradientRect(0,0,width,height,1,2,4);
-  //the three squares
-  scale(0.8);
-  drawGradientRect(450, 450, 300, 300, 5.0, 10.0, 1.0);
-  drawGradientRect(850, 450, 300, 300, 1.0, 1.5, 3.0);
-  drawGradientRect(50, 450, 300, 300, 3.0, 1.0, 2.0);
+scale(0.8);
+drawGradientRect(450, 450, 300, 300, color(255, 0, 0), color(0, 0, 255));
+drawGradientRect(850, 450, 300, 300, color(0, 255, 0), color(255, 255, 0));
+drawGradientRect(50, 450, 300, 300, color(255, 0, 255), color(0, 255, 255));
 }
 
-void drawGradientRect(int x, int y, int w, int h, float g1, float g2, float g3) {
+void drawGradientRect(int x, int y, int w, int h, color c1, color c2) {
   noStroke();
   for (int i = 0; i < h; i++) {
-    float c = map(i, 0, h, 0, 255);
-    fill(c/g1, c/g2, c/g3);
-    rect(x, y + i, w, 1);
+    float t = map(i, 0, h, 0, 1);
+    color c = lerpColor(c1, c2, t);
+    stroke(c); 
+    line(x, y + i, x + w, y + i);
   }
 }
