@@ -33,6 +33,7 @@ void draw() {
 
 void ring(int x, int y, int r) {
   float spacing = r / 3.0;
+  stroke(255);
   circle(x, y, r);
   circle(x, y, r - spacing);
   circle(x, y, r - 2 * spacing);
